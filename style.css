@@ -1,0 +1,192 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 100;
+}
+/* Sizing of the solar system that will be displayed */
+.solar-system {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+}
+/* Position of the sun in the middle of everything */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffd700, #ff8c00);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+/* Making sure that the orbits are all around the sun */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Orbit sizes and how long each planet takes to make one revolution around the sun */
+.mercury {
+    width: 100px;
+    height: 100px;
+    animation: rotate 3s linear infinite;
+}
+
+.venus {
+    width: 160px;
+    height: 160px;
+    animation: rotate 7s linear infinite;
+}
+
+.earth {
+    width: 230px;
+    height: 230px;
+    animation: rotate 10s linear infinite;
+}
+
+.mars {
+    width: 300px;
+    height: 300px;
+    animation: rotate 19s linear infinite;
+}
+
+.jupiter {
+    width: 400px;
+    height: 400px;
+    animation: rotate 120s linear infinite;
+}
+
+.saturn {
+    width: 500px;
+    height: 500px;
+    animation: rotate 290s linear infinite;
+}
+
+.uranus {
+    width: 600px;
+    height: 600px;
+    animation: rotate 840s linear infinite;
+}
+
+.neptune {
+    width: 700px;
+    height: 700px;
+    animation: rotate 1650s linear infinite;
+}
+
+/* Planet styles and making sure my hover effects work by putting the planets on top*/
+.planet {
+    position: absolute;
+    top: -5px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+/* Planet sizes and colors */
+.mercury .planet {
+    width: 10px;
+    height: 10px;
+    background: #bdc3c7;
+}
+
+.venus .planet {
+    width: 15px;
+    height: 15px;
+    background: #e67e22;
+}
+
+.earth .planet {
+    width: 16px;
+    height: 16px;
+    background: #3498db;
+}
+
+.mars .planet {
+    width: 14px;
+    height: 14px;
+    background: #e74c3c;
+}
+
+.jupiter .planet {
+    width: 30px;
+    height: 30px;
+    background: #f39c12;
+}
+
+.saturn .planet {
+    width: 28px;
+    height: 28px;
+    background: #f1c40f;
+}
+
+.uranus .planet {
+    width: 20px;
+    height: 20px;
+    background: #00c3ff;
+}
+
+.neptune .planet {
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+}
+
+/* Rotation animation */
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Search container styles */
+.search-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#search-input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+/* the planets in the solar system and how they look and behave */
+#planet-details {
+    position: relative;
+    z-index: 100;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+

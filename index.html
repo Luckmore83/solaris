@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solaris</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Solaris</h1>
+        <section class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a planet..." />
+            <button onclick="handleSearch()">Search</button> <!-- Checks if the input is a celestial body -->
+        </section>
+    </header>
+    <!-- This will show the solar system, the celestial bodies and their rotation -->
+    <main class="solar-system">
+        <article class="sun"></article>
+        <article class="orbit mercury">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit venus">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit earth">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit mars">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit jupiter">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit saturn">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit uranus">
+            <article class="planet"></article>
+        </article>
+        <article class="orbit neptune">
+            <article class="planet"></article>
+        </article>
+    </main>
+
+    <section id="planet-details">
+        <!-- Planet details will be displayed here and will take center stage for better user friendliness -->
+    </section>
+
+    
+</body>
+</html>
