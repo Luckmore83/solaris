@@ -73,16 +73,19 @@ async function fetchSpecificPlanet(planetName) {
     );
 
     if (specificPlanet) {
-        // Hide solar system
+        // Hide solar system when displaying information about a fetched celestial body.
         document.querySelector('.solar-system').style.display = 'none';
         
         // Show planet details
         const planetSection = document.getElementById('planet-details');
         planetSection.style.display = 'block';
         const planetSymbol = planetarySymbols[specificPlanet.name.toLowerCase()] || '';
-        
+        const planetClassName = `planet-${specificPlanet.name.toLowerCase()}`;
+        // The info section that shows a visual representation of the celestial body and information about it.
         planetSection.innerHTML = `
             <button onclick="goBackToSolarSystem()" class="back-button">← Back to Solar System</button>
+            <figure class="planet-large planet-${specificPlanet.name.toLowerCase()}">
+            </figure>
             <section class="planet-info">
                 <h2>${planetSymbol} ${specificPlanet.name}</h2>
                 <p><strong>Type:</strong> ${specificPlanet.type}</p>
@@ -106,7 +109,7 @@ async function fetchSpecificPlanet(planetName) {
 function displayNotFound() {
     const planetSection = document.getElementById('planet-details');
     planetSection.style.display = 'block';
-    planetSection.innerHTML = '<p>Planet not found. Please try again.</p>';
+    planetSection.innerHTML = '<p>Inget hittades. Försök igen.</p>';
 }
 
 // Function to handle search
@@ -157,7 +160,7 @@ const styles = `
     }
 `;
 
-// Add styles to page
+// Styles
 const styleSheet = document.createElement("style");
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
