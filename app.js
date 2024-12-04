@@ -50,7 +50,7 @@ async function getApiKey() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-zocom': 'solaris-iOjmhjtgjqkZhp6HI',
+                'x-zocom': 'solaris-edVCa1E6zDZRztaq',
             },
         });
 
