@@ -12,14 +12,14 @@ header {
     position: relative;
     z-index: 100;
 }
-/* Sizing of the solar system that will be displayed */
+/* Sizing of the solar system that will be displayed. */
 .solar-system {
     position: relative;
     width: 800px;
     height: 800px;
     margin: 0 auto;
 }
-/* Position of the sun in the middle of everything */
+/* Position of the sun in the middle of everything. */
 .sun {
     position: absolute;
     top: 50%;
@@ -31,7 +31,7 @@ header {
     transform: translate(-50%, -50%);
     z-index: 10;
 }
-/* A glow effect on the sun when you hover over it in the solar system view */
+/* A glow effect on the sun when you hover over it in the solar system view. */
 .sun:hover {
     box-shadow:
     0 0 120px #ff8c00,  
@@ -62,7 +62,7 @@ cursor: pointer;
                 inset 0 0 50px #ff5100;
         }
 }
-/* Making sure that the orbits are all around the sun */
+/* Making sure that the orbits are all around the sun. */
 .orbit {
     position: absolute;
     top: 50%;
@@ -73,7 +73,7 @@ cursor: pointer;
     pointer-events: none;
 }
 
-/* Orbit sizes and how long each planet takes to make one revolution around the sun */
+/* Orbit sizes and how long each planet takes to make one revolution around the sun. */
 .mercury {
     width: 100px;
     height: 100px;
@@ -122,7 +122,7 @@ cursor: pointer;
     animation: rotate 1650s linear infinite;
 }
 
-/* Planet styles and making sure my hover effects work by putting the planets on top*/
+/* Planet styles and making sure my hover effects work by putting the planets on top.*/
 .planet {
     position: absolute;
     top: -5px; 
@@ -134,7 +134,7 @@ cursor: pointer;
     pointer-events: auto;
 }
 
-/* Planet sizes and colors */
+/* Planet sizes and colors.*/
 .mercury .planet {
     width: 10px;
     height: 10px;
@@ -212,7 +212,7 @@ cursor: pointer;
     }
 }
 
-/* Specific planet styles */
+/* Specific planet styles. */
 .planet-mercury {
     background: linear-gradient(45deg, #808080, #bdc3c7);
 }
@@ -254,7 +254,7 @@ cursor: pointer;
     background: linear-gradient(45deg, #2980b9, #3498db);
 }
 
-/* Saturn's rings for the info section */
+/* Saturn's rings for the info section. */
 .planet-saturn::after {
     content: '';
     position: absolute;
@@ -271,7 +271,7 @@ cursor: pointer;
     z-index: 1;
 }
 
-/* Rotation animation */
+/* Rotation animation. */
 @keyframes rotate {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -281,7 +281,7 @@ cursor: pointer;
     }
 }
 
-/* Search container styles */
+/* Search container styles. */
 .search-container {
     margin: 20px 0;
     text-align: center;
@@ -299,7 +299,7 @@ button {
     font-size: 16px;
     font-weight: bold;
 }
-/* The planets in the solar system and how they look and behave */
+/* The planets in the solar system and how they look and behave. */
 #planet-details {
     position: relative;
     z-index: 100;
@@ -369,7 +369,7 @@ button {
     animation: planetRotate 20s linear infinite;
 }
 
-/* /* Saturn's rings  */
+/* /* Saturn's rings.  */
 .planet-saturnus::after {
     content: '';
     position: absolute;

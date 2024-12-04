@@ -1,4 +1,4 @@
-const planetarySymbols = { // I added planetary symbols to show next to the celestial body names
+const planetarySymbols = { // I added planetary symbols to show next to the celestial body names.
     'solen': '☉',
     'merkurius': '☿',
     'venus': '♀',
@@ -39,10 +39,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.log('No planet elements found');
+        console.log('Inga planeter funna.');
     }
 });
-// Function to fetch all celestial bodies from the API with a non-hardcoded API-key
+// Function to grab the API-key
+async function getApiKey() {
+    try {
+        
+        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-zocom': 'solaris-iOjmhjtgjqkZhp6HI',
+            },
+        });
+
+        if (!response.ok) throw new Error("Kunde inte hämta API-nyckel");
+        
+        const data = await response.json();
+        console.log(data);
+        return data.key;     
+    } catch (error) {
+        console.error("Fel med att hämta API-nyckel:", error);
+        throw error;
+    }
+}
+
+
+getApiKey().then(key => console.log("API Key:", key));
+
+// Function to fetch all celestial bodies from the API with a non-hardcoded API-key.
 async function fetchCelestialBodies() {
     try {
         const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
@@ -56,16 +82,16 @@ async function fetchCelestialBodies() {
             const data = await response.json();
             return data.bodies;
         } else {
-            console.error('Failed to fetch celestial bodies:', response.statusText);
+            console.error('Kunde inte hämta himlakroppar:', response.statusText);
             return [];
         }
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Fel med datahämtning:', error);
         return [];
     }
 }
 
-// Function to fetch specific planet
+// Function to fetch specific planet.
 async function fetchSpecificPlanet(planetName) {
     const celestialBodies = await fetchCelestialBodies();
     const specificPlanet = celestialBodies.find(body =>
@@ -105,14 +131,14 @@ async function fetchSpecificPlanet(planetName) {
     }
 }
 
-// Function to display not found message
+// Function to display "not found"- message.
 function displayNotFound() {
     const planetSection = document.getElementById('planet-details');
     planetSection.style.display = 'block';
     planetSection.innerHTML = '<p>Inget hittades. Försök igen.</p>';
 }
 
-// Function to handle search
+// Function to handle search.
 function handleSearch() {
     const searchInput = document.getElementById('search-input');
     const planetName = searchInput.value.trim();
@@ -124,13 +150,13 @@ function handleSearch() {
     }
 }
 
-// Function to go back to solar system view
+// Function to go back to solar system view.
 function goBackToSolarSystem() {
     document.querySelector('.solar-system').style.display = 'block';
     document.getElementById('planet-details').style.display = 'none';
 }
 
-// CSS styling
+// CSS styling.
 const styles = `
     #planet-details {
         display: none;
@@ -160,12 +186,12 @@ const styles = `
     }
 `;
 
-// Styles
+// Styles.
 const styleSheet = document.createElement("style");
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
-// Event listeners
+// Event listeners.
 window.addEventListener('load', function() {
     
     const searchInput = document.getElementById('search-input');
@@ -177,3 +203,4 @@ window.addEventListener('load', function() {
         });
     }
 });
+
