@@ -1,7 +1,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Press Start 2P", system-ui;
     margin: 0;
     padding: 0;
 }
@@ -296,6 +296,8 @@ cursor: pointer;
 button {
     padding: 8px 16px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
 /* The planets in the solar system and how they look and behave */
 #planet-details {

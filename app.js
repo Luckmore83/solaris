@@ -83,7 +83,7 @@ async function fetchSpecificPlanet(planetName) {
         const planetClassName = `planet-${specificPlanet.name.toLowerCase()}`;
         // The info section that shows a visual representation of the celestial body and information about it.
         planetSection.innerHTML = `
-            <button onclick="goBackToSolarSystem()" class="back-button">← Back to Solar System</button>
+            <button onclick="goBackToSolarSystem()" class="back-button">← Tillbaka till solsystemet</button>
             <figure class="planet-large planet-${specificPlanet.name.toLowerCase()}">
             </figure>
             <section class="planet-info">
