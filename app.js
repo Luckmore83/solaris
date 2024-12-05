@@ -43,14 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // Function to grab the API-key
-async function getApiKey() {
+async function apiKey() {
     try {
         
         const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-zocom': 'solaris-edVCa1E6zDZRztaq',
             },
         });
 
@@ -66,16 +65,14 @@ async function getApiKey() {
 }
 
 
-getApiKey().then(key => console.log("API Key:", key));
+apiKey().then(key => console.log("API Key:", key));
 
 // Function to fetch all celestial bodies from the API with a non-hardcoded API-key.
-async function fetchCelestialBodies() {
+async function fetchCelestialBodies(apiKey) {
     try {
         const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
             method: 'GET',
-            headers: {
-                'x-zocom': 'solaris-i0jmhtjgqKZhp6Hl'
-            }
+            headers: { 'x-zocom': apiKey },
         });
 
         if (response.ok) {
@@ -93,7 +90,8 @@ async function fetchCelestialBodies() {
 
 // Function to fetch specific planet.
 async function fetchSpecificPlanet(planetName) {
-    const celestialBodies = await fetchCelestialBodies();
+    const key = await apiKey();
+    const celestialBodies = await fetchCelestialBodies(key);
     const specificPlanet = celestialBodies.find(body =>
         body.name.toLowerCase() === planetName.toLowerCase()
     );
