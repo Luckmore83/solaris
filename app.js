@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Inga planeter funna.');
     }
 });
-// Function to grab the API-key
+// Function to grab the API-key.
 async function apiKey() {
     try {
         
@@ -100,7 +100,7 @@ async function fetchSpecificPlanet(planetName) {
         // Hide solar system when displaying information about a fetched celestial body.
         document.querySelector('.solar-system').style.display = 'none';
         
-        // Show planet details
+        // Show planet details.
         const planetSection = document.getElementById('planet-details');
         planetSection.style.display = 'block';
         const planetSymbol = planetarySymbols[specificPlanet.name.toLowerCase()] || '';
