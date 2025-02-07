@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function apiKey() {
     try {
         
-        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys', {
+        const response = await fetch('https://i4kif2xfk7.execute-api.eu-north-1.amazonaws.com/keys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ apiKey().then(key => console.log("API Key:", key));
 // Function to fetch all celestial bodies from the API with a non-hardcoded API-key.
 async function fetchCelestialBodies(apiKey) {
     try {
-        const response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        const response = await fetch('https://i4kif2xfk7.execute-api.eu-north-1.amazonaws.com/bodies', {
             method: 'GET',
             headers: { 'x-zocom': apiKey },
         });
